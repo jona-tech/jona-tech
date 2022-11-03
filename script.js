@@ -71,6 +71,18 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
+function incrementScore() {
+
+}
+
+function incrementWrongAnswer() {
+
+}
+
+function checkAnswer() {
+    
+}
+
 const questions = [
     {
         question: 'How many tones exist in the chromatic scale?',
