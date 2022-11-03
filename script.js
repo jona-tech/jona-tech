@@ -1,3 +1,5 @@
+// code structure from https://www.youtube.com/watch?v=riDzcEQbX6k with intention to adjust
+
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
@@ -80,7 +82,7 @@ function incrementWrongAnswer() {
 }
 
 function checkAnswer() {
-    
+
 }
 
 const questions = [
