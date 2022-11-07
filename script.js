@@ -1,5 +1,8 @@
 // code structure from https://www.youtube.com/watch?v=riDzcEQbX6k with a few adjustments
 
+/**
+ * Declared variables to target elements in HTML document
+ */
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
@@ -10,17 +13,22 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
 let scoreBox = document.getElementById('score')
 
+/**
+ * Event listeners to make start button and next button work
+ */
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 });
-
+// score counter from Love Maths project
 function incrementScore() {
     let oldScore = parseInt(document.getElementById('count-correct').innerText)
     document.getElementById('count-correct').innerText = ++oldScore
 };
-
+/**
+ * function to make start button disappear and question container appear with randomly sorted questions from array
+ */
 function startQuiz() {
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -29,10 +37,18 @@ function startQuiz() {
     setNextQuestion()
 };
 
+/**
+ * code to move on to next question and reset the container
+ */
+
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 };
+
+/**
+ * function to show question and options from the array list of question and answers and check if answer is correct
+ */
 
 function showQuestion(question) {
     questionElement.innerText = question.question;
@@ -48,12 +64,19 @@ function showQuestion(question) {
     })
 };
 
+/**
+ * resets question container after answering */
+
 function resetState() {
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 };
+
+/**
+ * function to select option, check correct answer, increment score if correct, show a restart button if all questions have been answered
+ */
 
 function selectAnswer(e) {
     let selectedButton = e.target;
@@ -74,6 +97,10 @@ function selectAnswer(e) {
     }
 };
 
+/**
+ * functions to make right answer button green and wrong answers grey
+ */
+
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -87,6 +114,10 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 };
+
+/**
+ * array of questions, options and correct answers
+ */
 
 const questions = [{
         question: 'How many tones exist in the chromatic scale?',

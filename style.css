@@ -5,6 +5,11 @@
 
 body {
     background: linear-gradient(to right, grey 0, black 100%);
+    color: white;
+    
+}
+
+#quiz-section {
     padding: 0;
     margin: 0;
     display: flex;
@@ -12,7 +17,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    color: white;
+    text-align: center;
 }
 
 .container {
@@ -58,4 +63,18 @@ body {
 
 .hide {
     display: none;
+}
+
+/* makes correct button green and wrong answers red */ 
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: rgb(92, 92, 92);
+}
+
+#score {
+    font-size: 2rem;
+    text-align: center;
 }
