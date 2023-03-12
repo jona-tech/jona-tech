@@ -8,6 +8,7 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const resultMessagesElement = document.getElementById('result-messages')
 
 
 
@@ -69,6 +70,7 @@ function showQuestion(question) {
  * resets question container after answering */
 
 function resetState() {
+    resultMessagesElement.classList.add('hide')
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
@@ -92,6 +94,15 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
+        resultMessagesElement.classList.remove('hide')
+        let score = parseInt(document.getElementById('count-correct').innerText)
+        if (score === 10){
+            resultMessagesElement.innerText = 'Excellent job! Play again?'
+        } else if (score >= 5) {
+            resultMessagesElement.innerText = 'Good job! Play again?'
+        } else {
+            resultMessagesElement.innerText = 'Better luck next time'
+        }
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
         questionContainerElement.classList.add('hide')
