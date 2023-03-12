@@ -10,6 +10,7 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 
+
 let shuffledQuestions, currentQuestionIndex
 let scoreBox = document.getElementById('score')
 

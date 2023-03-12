@@ -3,10 +3,16 @@
     font-family: 'Handlee', sans-serif;
 }
 
+html {
+    background: transparent;
+    position: absolute;
+}
+
 body {
     background: linear-gradient(to right, grey 0, black 100%);
     color: white;
-    
+    position: relative;
+    height: fit-content;
 }
 
 #quiz-section {
@@ -14,7 +20,7 @@ body {
     margin: 0;
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -28,6 +34,7 @@ body {
     border-radius: 25px;
     padding: 50px;
 }
+
 
 .btn-grid {
     display: grid;
@@ -74,7 +81,22 @@ body {
     background-color: rgb(92, 92, 92);
 }
 
+#score-container {
+    width: 100%;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+#score_p {
+    padding-bottom: 5%;
+    text-align: center;
+}
+
 #score {
+    position: relative;
+    margin: 0 auto;
     font-size: 2rem;
     text-align: center;
 }
+

@@ -9,34 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Playfair+Display:wght@900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>Musicians Quiz</title>
 </head>
 
 <body>
     <section id="quiz-section">
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+        <div class="container">
+            <div id="question-container" class="hide">
+                <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
         </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-        </div>
+    </section>
+    <div id="score-container">
+        <p id="score_p">You've got <span id="count-correct">0</span> out of 10 answers correct</p>
     </div>
-</section>
-    <section id="score">
-    <div>
-        <p class="scores">You've got <span id="count-correct">0</span> out of 10 answers correct</p>
-    </div>
-</section>
+
 </body>
 
 </html>
