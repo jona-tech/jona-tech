@@ -119,4 +119,7 @@ h1 {
         width: 80%
         margin: 0 auto;
     }
+    #score {
+        font-size: 0,8em;
+    }
 }
