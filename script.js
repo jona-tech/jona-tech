@@ -10,8 +10,6 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const resultMessagesElement = document.getElementById('result-messages')
 
-
-
 let shuffledQuestions, currentQuestionIndex
 let scoreBox = document.getElementById('score')
 
@@ -28,15 +26,17 @@ function incrementScore() {
     let oldScore = parseInt(document.getElementById('count-correct').innerText)
     document.getElementById('count-correct').innerText = ++oldScore
 };
+
 /**
  * function to make start button disappear and question container appear with randomly sorted questions from array
  */
 function startQuiz() {
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
-    setNextQuestion()
+    currentQuestionIndex = 0;
+    questionContainerElement.classList.remove('hide');
+    setNextQuestion();
+    document.getElementById('count-correct').innerText = '0';
 };
 
 /**
@@ -77,6 +77,7 @@ function resetState() {
     }
 };
 
+
 /**
  * function to select option, check correct answer, increment score if correct, show a restart button if all questions have been answered
  */
@@ -90,6 +91,7 @@ function selectAnswer(e) {
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
+        button.disabled = true
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
