@@ -93,18 +93,15 @@ Bad
 The website consists of two different layouts.
 * Start/Restart is the same layout with different text in the button element depending on whether to Start a new quiz, or restart the quiz after finishing.
 
-'picture of start and restart'
+![Start-Button](https://i.imgur.com/U3NNg4e.png)
 
 * Quiz layout shows a question box with 4 different options to choose from.
 
-'picture of question box'
-
-* Wrong answers turns grey and correct answer turns green when clicking an option.
-
-'picture of wrong and correct answers'
+![Question-Box](https://i.imgur.com/NGZf241.png)
 
 #### Future development
-* The website is going to have more quiz's with a focus on wide range knowledge of topics that can challenge well educated users.
+
+* A possible future implementation is different levels of difficulty, ranging from easy to hard and covers a wide range of questions for musicians.
 
 ### Technologies used
 

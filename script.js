@@ -11,7 +11,7 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 const resultMessagesElement = document.getElementById('result-messages');
 
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
 let scoreBox = document.getElementById('score');
 
 /**
@@ -20,15 +20,15 @@ let scoreBox = document.getElementById('score');
 
 startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
+    currentQuestionIndex++;
+    setNextQuestion();
 });
 
 // score counter from Love Maths project
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById('count-correct').innerText)
-    document.getElementById('count-correct').innerText = ++oldScore
-};
+    let oldScore = parseInt(document.getElementById('count-correct').innerText);
+    document.getElementById('count-correct').innerText = ++oldScore;
+}
 
 /**
  * function to make start button disappear and question container appear with randomly sorted questions from array
@@ -40,7 +40,7 @@ function startQuiz() {
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
     document.getElementById('count-correct').innerText = '0';
-};
+}
 
 /**
  * code to move on to next question and reset the container
@@ -48,8 +48,8 @@ function startQuiz() {
 
 function setNextQuestion() {
     resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-};
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
+}
 
 /**
  * function to show question and options from the array list of question and answers and check if answer is correct
@@ -62,12 +62,12 @@ function showQuestion(question) {
         button.innerText = answer.text;
         button.classList.add('btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
-        };
+            button.dataset.correct = answer.correct;
+        }
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
-    })
-};
+    });
+}
 
 /**
  * resets question container after answering */
@@ -76,9 +76,9 @@ function resetState() {
     resultMessagesElement.classList.add('hide');
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
-};
+}
 
 
 /**
@@ -89,43 +89,43 @@ function selectAnswer(e) {
     let selectedButton = e.target;
     let correct = selectedButton.dataset.correct;
     if (correct) {
-        incrementScore()
-    };
-    setStatusClass(document.body, correct)
+        incrementScore();
+    }
+    setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-        button.disabled = true
+        setStatusClass(button, button.dataset.correct);
+        button.disabled = true;
     });
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
+        nextButton.classList.remove('hide');
     } else {
-        resultMessagesElement.classList.remove('hide')
+        resultMessagesElement.classList.remove('hide');
         let score = parseInt(document.getElementById('count-correct').innerText);
         if (score === 10){
-            resultMessagesElement.innerText = 'Excellent job! Play again?'
+            resultMessagesElement.innerText = 'Excellent job! Play again?';
         } else if (score >= 5) {
-            resultMessagesElement.innerText = 'Good job! Play again?'
+            resultMessagesElement.innerText = 'Good job! Play again?';
         } else {
-            resultMessagesElement.innerText = 'Better luck next time'
-        };
+            resultMessagesElement.innerText = 'Better luck next time';
+        }
         startButton.innerText = 'Restart';
         startButton.classList.remove('hide');
         questionContainerElement.classList.add('hide');
     }
-};
+}
 
 /**
  * functions to make right answer button green and wrong answers grey
  */
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    clearStatusClass(element);
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
-        element.classList.add('wrong')
+        element.classList.add('wrong');
     }
-};
+}
 
 function clearStatusClass(element) {
     element.classList.remove('correct');
@@ -336,4 +336,4 @@ const questions = [{
             }
         ]
     }
-]
+];
