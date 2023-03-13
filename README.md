@@ -7,7 +7,7 @@
 The main purpose of this quiz is to engage musically interested persons in a different, more challenging quiz than the majority of musical quiz's available at the moment. 
 It's meant for having a good time and at the same time educate the user about a wide range of musical information that varies in difficulty. The user interface is designed to make it easy for the user to start the quiz without instructions or further information about the topic.
 
-The quiz has three layouts: Start, Quiz and Restart
+The quiz has three layouts: Start, Quiz and Restart/Valuation
 
 The site has been created as a milestone project for the Code Institute's Diploma in Full Stack Software Development program.
 
@@ -17,9 +17,13 @@ A live version of the website can be found here:
 
 ## Table of content
 
-<ul>
-list of content here
-</ul>
+
+* [Target Audience](#target-audience)
+* [User stories](#user-stories)
+* [Design](#design)
+* [Features](#features)
+* [Technologies-Used](#technologies-used)
+
 
 ## UX
 <hr>
@@ -29,6 +33,7 @@ list of content here
 * The quiz targets any individual wanting to have a fun time and possibly learn something interesting along the way. Everyone can take the quiz but you need to posess a wide range of musical knowledge to score high on the first try.
 
 ### User stories
+
 #### New Users
 * I want a quiz that is more than just guessing songs.
 * I want to improve my knowledge about music.
@@ -40,23 +45,40 @@ list of content here
 * I want to know more about this topic.
 
 #### Goal
-* I want to get 10 out of 10 right answers.
+* I want to score the highest possible.
 
 #### Requirements
 * To build an interactive front-end site that responds to user actions. The user should engage actively by altering data and how the site displays. The development process needs to be well documented through a version controls system such as GitHub and contain HTML5, CSS3 and JavaScript.
 
 ### Design
-The design is simple to keep the user focused on the quiz without unnecessary distractions. When clicking an answer, all the wrong answers turns grey and the correct answer(s) turns green.
+The design is simple to keep the user focused on the quiz without unnecessary distractions. 
 
-''Insert pictures of different stages of the quiz here''
+![Quiz-design](https://i.imgur.com/49IxgOz.png)
+
+When clicking an answer, all the wrong answers turns grey and the correct answer(s) turns green.
+
+![Answer-clicked](https://i.imgur.com/zR2pHtG.png)
+
+In the ending, the user also receives a valuation based on the performance in score.
+
+Performance ratings:
+
+Excellent 
+![Excellent](https://i.imgur.com/4NjIXWY.png)
+
+Good
+![Good](https://i.imgur.com/1nlr3Rm.png)
+
+Bad
+![Bad](https://i.imgur.com/R98svVE.png)
 
 #### Typography
 * I used google fonts 'Handlee' font to increase the sensation of playfulness to the website.
-* I used Sans-serfi as a backup for users that may have browsers not supporting google fonts.
+* I used Sans-serif as a backup for users that may have browsers not supporting google fonts.
 
 #### Color Palette
-* There are only '' colors on the palette, chosen from personal preference to make a simple look and make text readable without unnecessary distractions.
-* The background is gradient going left to right, grey to black to make the design more sophisticated.
+* There are only two colors on the palette, chosen from personal preference to make a simple look and make text readable without unnecessary distractions.
+* The background is gradient going left to right, grey to black to make the design more interesing.
 
 #### Different screens
 * The website is fully responsive to fit all screen sizes.

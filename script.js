@@ -10,17 +10,20 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const resultMessagesElement = document.getElementById('result-messages')
 
+
 let shuffledQuestions, currentQuestionIndex
 let scoreBox = document.getElementById('score')
 
 /**
  * Event listeners to make start button and next button work
  */
+
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 });
+
 // score counter from Love Maths project
 function incrementScore() {
     let oldScore = parseInt(document.getElementById('count-correct').innerText)
