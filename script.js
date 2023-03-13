@@ -3,22 +3,22 @@
 /**
  * Declared variables to target elements in HTML document
  */
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-const resultMessagesElement = document.getElementById('result-messages')
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+const resultMessagesElement = document.getElementById('result-messages');
 
 
 let shuffledQuestions, currentQuestionIndex
-let scoreBox = document.getElementById('score')
+let scoreBox = document.getElementById('score');
 
 /**
  * Event listeners to make start button and next button work
  */
 
-startButton.addEventListener('click', startQuiz)
+startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
@@ -34,8 +34,8 @@ function incrementScore() {
  * function to make start button disappear and question container appear with randomly sorted questions from array
  */
 function startQuiz() {
-    startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    startButton.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
@@ -47,7 +47,7 @@ function startQuiz() {
  */
 
 function setNextQuestion() {
-    resetState()
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex])
 };
 
@@ -58,14 +58,14 @@ function setNextQuestion() {
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
         if (answer.correct) {
             button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        };
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
     })
 };
 
@@ -73,8 +73,8 @@ function showQuestion(question) {
  * resets question container after answering */
 
 function resetState() {
-    resultMessagesElement.classList.add('hide')
-    nextButton.classList.add('hide')
+    resultMessagesElement.classList.add('hide');
+    nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
@@ -90,27 +90,27 @@ function selectAnswer(e) {
     let correct = selectedButton.dataset.correct;
     if (correct) {
         incrementScore()
-    }
+    };
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
         button.disabled = true
-    })
+    });
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
         resultMessagesElement.classList.remove('hide')
-        let score = parseInt(document.getElementById('count-correct').innerText)
+        let score = parseInt(document.getElementById('count-correct').innerText);
         if (score === 10){
             resultMessagesElement.innerText = 'Excellent job! Play again?'
         } else if (score >= 5) {
             resultMessagesElement.innerText = 'Good job! Play again?'
         } else {
             resultMessagesElement.innerText = 'Better luck next time'
-        }
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
-        questionContainerElement.classList.add('hide')
+        };
+        startButton.innerText = 'Restart';
+        startButton.classList.remove('hide');
+        questionContainerElement.classList.add('hide');
     }
 };
 
@@ -128,8 +128,8 @@ function setStatusClass(element, correct) {
 };
 
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 };
 
 /**
