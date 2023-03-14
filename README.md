@@ -57,7 +57,7 @@ The design is simple to keep the user focused on the quiz without unnecessary di
 
 ![Quiz-design](https://i.imgur.com/49IxgOz.png)
 
-When clicking an answer, all the wrong answers turns grey and the correct answer(s) turns green.
+When clicking an answer, all the wrong answers turns grey and the correct answer(s) turns green. The buttons are also unclickable after choosing an answer.
 
 ![Answer-clicked](https://i.imgur.com/zR2pHtG.png)
 
