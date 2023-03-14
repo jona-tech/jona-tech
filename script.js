@@ -12,7 +12,7 @@ const resultMessagesElement = document.getElementById('result-messages');
 
 
 let shuffledQuestions, currentQuestionIndex;
-let scoreBox = document.getElementById('score');
+
 
 /**
  * Event listeners to make start button and next button work
@@ -130,7 +130,7 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
-};
+}
 
 /**
  * array of questions, options and correct answers

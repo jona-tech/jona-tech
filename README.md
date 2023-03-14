@@ -13,7 +13,9 @@ The site has been created as a milestone project for the Code Institute's Diplom
 
 Required technologies are: HTML5, CSS3 and JavaScript
 
-A live version of the website can be found here:
+* A live version of the website can be found here: https://jona-tech.github.io/musicians-quiz/
+
+* The repository can be found here: https://github.com/jona-tech/musicians-quiz
 
 ## Table of content
 
@@ -107,17 +109,35 @@ The website consists of two different layouts.
 
 #### Languages 
 
-* HTML5
-' add jigsaw w3 HTML validation picture as proof'
-* CSS3
-' add jigsaw w3 CSS validation img as proof'
-* JavaScript
-'add jshint validation img as proof'
+* HTML5, validated through w3c validator with no error messages
+
+![HTML-Valid](https://i.imgur.com/oUf6rvu.png)
+
+* CSS3, validated through jigsaw validator with no error messages
+
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
+* JavaScript validation through JShint show only one error that does not affect my code.
+
+![JShint-validtor](https://i.imgur.com/xVQzrmH.png)
 
 #### Deployment
 
 <ol>
-'steps of deployment'
+<li>Sign In to Github</li>
+<li>Go to "my repositories"</li>
+<li>Choose the "Musicians-quiz" project</li>
+<li>Go to settings</li>
+<li>Go to Github pages</li>
+<li>Choose deployment from root directory of the file</li>
+<li>Save file</li>
+<li>The website is now live</li>
 </ol>
 
 #### Content
@@ -125,6 +145,7 @@ The website consists of two different layouts.
 * Questions and answers were known by heart.
 
 #### Media
+
 * Google fonts.
 
 
@@ -143,15 +164,14 @@ The website consists of two different layouts.
 <li>Bug 3</li>
 <ul>
 <li>Score incrementation continues from current integer after clicking restart button even though it should start over at 0.</li>
-<li>Fix: ?</li>
+<li>Fix: change value of the scoreboard when pressing the restart button in the script.js file</li>
 </ul>
 </ul>
 
 ### Credits
 
 * web dev simplified
-* other students?
-* w3 school
+* W3Schools
 * Stack overflow
 
  

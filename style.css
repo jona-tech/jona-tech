@@ -8,13 +8,14 @@
 html {
     background: transparent;
     position: absolute;
+    max-height: 80%;
 }
 
 body {
     background: linear-gradient(to right, grey 0, black 100%);
     color: white;
-    position: relative;
-    height: fit-content;
+    position: static;
+    max-height: 80%;
 }
 
 h1 {
@@ -28,7 +29,7 @@ h1 {
     margin: 0;
     display: flex;
     width: 100vw;
-    height: 80vh;
+    height: 70vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -90,37 +91,33 @@ h1 {
     background-color: rgb(92, 92, 92);
 }
 
-#score-container {
-    width: 100%;
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
+#scores {
+    margin: 0 auto;
+    
 }
 
 #score_p {
     padding-bottom: 5%;
     text-align: center;
-    font-size: 2em;
+    font-size: 1,5rem;
 }
 
 #score {
-    position: relative;
-    margin: 0 auto;
-    font-size: 2rem;
+    position: fixed;
+    font-size: 1,rem;
     text-align: center;
 }
 
 .result {
     text-align: center;
     padding-bottom: 2%;
-    font-size: 1, 7rem;
+    font-size: 1,5rem;
 }
 
 @media screen and (max-width: 380px) {
     #question-container {
-        font-size: 0.8em;
+        font-size: 12px !important;
         width: 90%;
-        margin: 0 auto;
     }
 
     #score {
@@ -133,5 +130,32 @@ h1 {
         padding-bottom: 0%;
         margin-bottom: 0px;
         text-align: center;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .score-container {
+        margin-top: 150px;
+    }
+
+    #quiz-section {
+        padding-top: 100px;
+        margin: 0;
+        width: 100vw;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .h1 {
+        display: none;
+    }
+
+    #scores {
+    
+        padding-bottom: 0px;
     }
 }
